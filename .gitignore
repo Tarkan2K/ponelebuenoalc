@@ -1,0 +1,15 @@
+# C++
+build/
+*.o
+*.out
+*.exe
+bin/
+.vscode/
+compile_commands.json
+.cache/
+
+# Node.js
+node_modules/
+dist/
+.env
+.DS_Store
