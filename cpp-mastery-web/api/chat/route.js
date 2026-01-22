@@ -1,4 +1,3 @@
-```
 import { openai } from '@ai-sdk/openai';
 import { streamText } from 'ai';
 import { SYSTEM_PROMPT } from '../../src/data/knowledgeBase.js';
@@ -15,12 +14,12 @@ function findRelevantContext(query) {
         let score = 0;
         const contentLower = chunk.content.toLowerCase();
         const titleLower = chunk.title.toLowerCase();
-        
+
         terms.forEach(term => {
             if (titleLower.includes(term)) score += 5; // Title match is valuable
             if (contentLower.includes(term)) score += 1;
         });
-        
+
         return { ...chunk, score };
     });
 
@@ -30,27 +29,26 @@ function findRelevantContext(query) {
         .sort((a, b) => b.score - a.score)
         .slice(0, 3);
 
-    return topChunks.map(c => `[Source: ${ c.source } - ${ c.title }]\n${ c.content } `).join("\n\n");
+    return topChunks.map(c => `[Source: ${c.source} - ${c.title}]\n${c.content}`).join("\n\n");
 }
 
 export async function POST(req) {
-  const { messages } = await req.json();
-  const lastMessage = messages[messages.length - 1].content;
-  
-  const context = findRelevantContext(lastMessage);
-  
-  const augmentedSystemPrompt = `${ SYSTEM_PROMPT }
+    const { messages } = await req.json();
+    const lastMessage = messages[messages.length - 1].content;
 
-** CONTEXT FROM KNOWLEDGE BASE:**
-    ${ context ? context : "No specific context found in library." }
+    const context = findRelevantContext(lastMessage);
+
+    const augmentedSystemPrompt = `${SYSTEM_PROMPT}
+
+**CONTEXT FROM KNOWLEDGE BASE:**
+${context ? context : "No specific context found in library."}
 `;
 
-  const result = streamText({
-    model: openai('gpt-4o'),
-    system: augmentedSystemPrompt,
-    messages,
-  });
+    const result = streamText({
+        model: openai('gpt-4o'),
+        system: augmentedSystemPrompt,
+        messages,
+    });
 
-  return result.toDataStreamResponse();
+    return result.toDataStreamResponse();
 }
-```
