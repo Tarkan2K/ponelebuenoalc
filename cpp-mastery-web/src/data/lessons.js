@@ -111,46 +111,27 @@ El enlazador (Linker) es el paso final.
     // ===========================================================================
     {
         id: 3,
-        title: "1.1: Estructura de un Programa y la Función Main",
+        title: "1.1: La Función Main",
         phase: "Módulo 1: Fundamentos",
-        description: "Análisis de la función de entrada, códigos de retorno y el entorno de ejecución.",
+        description: "El punto de entrada de todo programa C++: Firmas estándar, códigos de retorno y argumentos.",
         content: `
-# 1. La Función Main
+# La Función Main
 
-Todo programa en C++ debe tener exactamente una función global llamada \`main\`. Es el punto de entrada designado donde el sistema operativo transfiere el control al programa.
+Todo programa en C++ debe tener **exactamente una** función global llamada \`main\`. Es el punto de entrada designado donde el sistema operativo transfiere el control al programa.
+
+## 1. La Firma Estándar
+Según el estándar ISO C++, existen dos firmas válidas para \`main\`:
 
 \`\`\`cpp
-int main() {
-    return 0;
-}
+int main() { ... }
+int main(int argc, char* argv[]) { ... }
 \`\`\`
 
-## Análisis de la Firma
-*   **\`int\` (Tipo de Retorno)**: La función \`main\` **debe** retornar un entero. Este valor se devuelve al sistema operativo al finalizar el programa. Un valor de \`0\` indica "éxito", mientras que cualquier otro valor indica un código de error específico.
+### Desglose de Componentes:
+*   **\`int\` (Tipo de Retorno)**: La función \`main\` **debe** retornar un entero. Este valor se devuelve al sistema operativo al finalizar el programa.
+    *   \`0\`: Indica ejecución exitosa (EXIT_SUCCESS).
+    *   Cualquier otro valor (usualmente \`1\` o \`-1\`): Indica un error.
 *   **\`main\` (Identificador)**: Es un nombre reservado para la función de inicio.
-*   **\`()\` (Parámetros)**: La lista de parámetros puede estar vacía, o puede aceptar argumentos de línea de comandos: \`int main(int argc, char* argv[])\`.
-
-> **Nota Técnica**: Algunos compiladores permiten \`void main()\`, pero esto **no es estándar** y no debe usarse en código profesional. El estándar ISO C++ requiere que \`main\` retorne \`int\`.
-
-# 2. Retorno Implícito
-
-La función \`main\` es especial: si la ejecución llega al final del bloque sin encontrar una sentencia \`return\`, el compilador inserta automáticamente \`return 0;\`. Esto no ocurre en ninguna otra función del lenguaje.
-
-# 3. Sentencias y Secuenciación
-
-Un programa en C++ es una secuencia de sentencias (statements) que se ejecutan en orden (salvo estructuras de control).
-
-*   **Sentencia Simple**: Una instrucción terminada en punto y coma (\`;\`). Ej: \`x = 5;\`. El punto y coma es el terminador, no un separador.
-*   **Bloque (Sentencia Compuesta)**: Un conjunto de sentencias agrupadas por llaves \`{}\`. Define un ámbito (scope) léxico.
-
-# 4. Atributo [[nodiscard]] (C++17)
-
-En el desarrollo profesional, es crucial no ignorar errores. El atributo \`[[nodiscard]]\` se coloca antes de la declaración de una función para indicar al compilador que debe emitir una advertencia si el valor de retorno es ignorado por el llamador.
-
-\`\`\`cpp
-[[nodiscard]] int conectarBaseDeDatos();
-\`\`\`
-
 Si llamas a \`conectarBaseDeDatos();\` sin capturar su resultado, el compilador generará una advertencia, ayudando a prevenir bugs silenciosos.
     `,
         quiz: {
