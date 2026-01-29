@@ -1,18 +1,67 @@
-# OmniTrade: C++ Mastery Project
+# Escuelas de Programación (Universal Code Mastery Platform)
 
-**OmniTrade** is a high-performance trading engine designed to demonstrate advanced C++ concepts for system-level programming interviews and expertise.
+**Scalable EdTech platform engineering for Systems Programming & High-Performance Computing.**
 
-## Core Concepts Covered
-1.  **Memory Management**: Custom Arena Allocators (No `new`/`delete` in hot paths).
-2.  **Object-Oriented Design**: Cache-friendly data structures and clean interfaces.
-3.  **Performance**: Low-latency design patterns.
-4.  **Systems**: Network programming with `epoll`.
+[![Deployment Status](https://img.shields.io/badge/Deployment-Production-success?style=flat-square)](https://escuelasdeprogramacion.vercel.app)
+[![Tech Stack](https://img.shields.io/badge/Stack-React_JavaScript-blue?style=flat-square)]()
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)]()
 
-## Build Instructions
+---
+
+## Project Overview
+
+**Escuelas de Programación** is a scalable Learning Management System (LMS) designed to deliver structured technical curricula. The platform currently operates as a high-performance Single Page Application (SPA), serving a comprehensive **Advanced C++ Module**.
+
+The project is engineered for scalability, with a modular architecture ready to support future tracks in Python, Rust, and JavaScript. It focuses on rigorous assessment through a tiered examination system and practical coding challenges.
+
+### Current Status
+* **Production Ready:** The platform is fully deployed and operational.
+* **Content Centric:** Features a complete C++ learning path backed by technical documentation.
+* **Scalable Foundation:** Community and Resource interfaces are implemented, laying the groundwork for future user interaction and forum integration.
+
+---
+
+## Key Features
+
+### 1. Comprehensive C++ Curriculum
+The pilot module offers a structured learning path divided into progressive chapters. Each section is backed by detailed documentation and practical examples, covering concepts from syntax fundamentals to memory management.
+
+### 2. Tiered Assessment Engine
+A robust testing system designed to validate knowledge retention through standardized exams:
+* **Standard Exams:** Three distinct difficulty tiers (Easy, Medium, Hard), each consisting of **20 questions** to comprehensively test the user's understanding of the module.
+* **Blitz Mode (Expert):** A randomized rapid-fire question engine designed for advanced users to test their reflexes on complex topics.
+
+### 3. Practical Challenges & Solutions
+Theory is reinforced through application.
+* **Module Challenges:** Each learning module concludes with a practical coding challenge.
+* **Alternative Questions:** Critical thinking questions with multiple-choice alternatives.
+* **Integrated Solutions:** Full solution keys are provided for every challenge to ensure the learning loop is closed.
+
+### 4. Community Infrastructure
+The platform includes dedicated interfaces for **Community** and **Resources**, currently deployed as foundational UI elements in preparation for the upcoming user authentication and discussion forum systems.
+
+---
+
+## System Architecture
+
+The project utilizes a modern frontend architecture optimized for fast content delivery and responsiveness.
+
+| Component | Technology | Role |
+| :--- | :--- | :--- |
+| **Frontend** | React / JavaScript | Component-based UI for dynamic content rendering. |
+| **Styling** | Tailwind CSS | Utility-first CSS for a consistent, responsive design. |
+| **Routing** | React Router | Client-side routing for seamless navigation. |
+| **Data Layer** | JSON / Static Data | Structured content management for chapters and exams. |
+| **Deployment** | Vercel | Global content distribution. |
+
+---
+
+## Local Development Setup
+
+To run this project locally for development or contribution:
+
+**1. Clone the repository**
 ```bash
-mkdir build
-cd build
-cmake ..
-make
-./src/OmniTrade
-```
+git clone [https://github.com/Tarkan2K/code-mastery-lms.git](https://github.com/Tarkan2K/code-mastery-lms.git)
+cd code-mastery-lms
+
