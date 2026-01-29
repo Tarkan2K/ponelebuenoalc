@@ -62,6 +62,24 @@ To run this project locally for development or contribution:
 
 **1. Clone the repository**
 ```bash
-git clone [https://github.com/Tarkan2K/code-mastery-lms.git](https://github.com/Tarkan2K/code-mastery-lms.git)
-cd code-mastery-lms
+git clone [https://github.com/Tarkan2K/escuelasdeprogramacion.git](https://github.com/Tarkan2K/escuelasdeprogramacion.git)
+cd escuelasdeprogramacion
 
+2. Install dependencies
+npm install
+
+3. Start the development server
+npm run dev
+
+Future Roadmap
+The platform is designed to scale horizontally into a multi-language ecosystem.
+
+[ ] Multi-Language Expansion: Implementation of full learning tracks for Python, Rust, and JavaScript.
+
+[ ] AI Tutor Integration: Future implementation of RAG (Retrieval-Augmented Generation) for contextual student assistance.
+
+[ ] User Authentication: implementation of login systems to track student progress and exam history.
+
+[ ] Community Forum: Activation of the backend logic for the Community and Resources pages.
+
+Author: Matías García Castillo Contact: mstias.gc@gmail.com
