@@ -10,7 +10,7 @@
 
 ## Project Overview
 
-**Escuelas de Programación** is a scalable Learning Management System (LMS) designed to deliver structured technical curricula. The platform currently operates as a high-performance Single Page Application (SPA), serving a comprehensive **Advanced C++ Module**.
+**Escuelas de Programación** is a scalable Learning Management System (LMS) designed to deliver structured technical curricula to everyone for free.
 
 The project is engineered for scalability, with a modular architecture ready to support future tracks in Python, Rust, and JavaScript. It focuses on rigorous assessment through a tiered examination system and practical coding challenges.
 
